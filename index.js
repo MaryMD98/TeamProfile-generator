@@ -20,7 +20,7 @@ const fs = require('fs');
 // what is your engineer's id?
 // what is your engineer's email?
 // what is your engineer's GitHub username?
-// which type of team member would you like to add?
+// which type of team member would you like to add? 
 // What is your intern's name?
 // what is your intern's id?
 // what is your intern's email?
