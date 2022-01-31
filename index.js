@@ -5,6 +5,9 @@ const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
 
+const teamMEMBERS = [];
+const idARRAY = [];
+
 // the first prompt will ask the Mnager questions and save the information of manager
 function init(){
     inquirer
@@ -32,6 +35,9 @@ function init(){
         ])
         .then((response) => {
             // manNAME , manID , manEMAIL ,manOFFICENUM
+            const manager = new Manager(
+                response.manName, response.manID, response.manEMAIL, response.manOFFICENUM
+            );
             console.log("I am on Manager prompt ");
             continueYESno();
         })
