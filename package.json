@@ -1,0 +1,25 @@
+{
+  "name": "inquirer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaryMD98/TeamProfile-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaryMD98/TeamProfile-generator/issues"
+  },
+  "homepage": "https://github.com/MaryMD98/TeamProfile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
