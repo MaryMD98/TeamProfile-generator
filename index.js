@@ -5,26 +5,40 @@ const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
 
-
+// the first prompt will ask the Mnager questions and save the information of manager
+// What is the team manager's name?
+// what is the team manager's id?
+// what is the team manager's email?
+// what is the team manager's office number?
 function init(){
     inquirer
         .prompt([
             {
-                type:'input',
-                name:'testname',
-                message: "did the prompt worked?"
+                type: 'input',
+                name: 'manNAME',
+                message: "What is the team manager's name?"
             },
             {
-                type:'input',
-                name:'continue',
-                message: "continue or no?"
+                type: 'input',
+                name: 'manID',
+                message: "What is the team manager's id?"
             },
+            {
+                type: 'input',
+                name: 'manEMAIL',
+                message: "What is the team manager's email?"
+            },
+            {
+                type: 'input',
+                name: 'manOFFICENUM',
+                message: "What is the team manager's office number?"
+            }
         ])
-        .then((response) => {if(response.continue === "yes"){
+        .then((response) => {
+            // manNAME , manID , manEMAIL ,manOFFICENUM
+            console.log("I am on Manager prompt ");
             continueYESno();
-        } else {
-            console.log(" answer is no to continue on first prompt");
-        }})
+        })
 }
 init ();
 
@@ -43,10 +57,15 @@ function continueYESno(){
             }
         ])
         .then((response) => {
-            if(response.continue === "Engineer"){EngineerPrompt();}
-            if(response.continue === "Intern"){InternPrompt();}
+            if(response.continue === "Engineer"){
+                console.log("on my way to engineer prompt");
+                EngineerPrompt();}
+            if(response.continue === "Intern"){
+                console.log("on my way to intern prompt");
+                InternPrompt();}
             // if response.continue === "I  don't want to add any more team members."
             // display results
+            console.log("user chose to end the questions ");
         })
 
 }
@@ -78,6 +97,7 @@ function EngineerPrompt(){
         ])
         .then((response) => {
             // engNAME , engID , engEMAIL ,engGItHUB
+            console.log("I am on engineer prompt ");
             continueYESno();
         })
 }
@@ -95,12 +115,12 @@ function InternPrompt(){
             {
                 type: 'input',
                 name: 'interID',
-                message: "what is your intern's id?"
+                message: "What is your intern's id?"
             },
             {
                 type: 'input',
                 name: 'interEMAIL',
-                message: "what is your intern's email?"
+                message: "What is your intern's email?"
             },
             {
                 type: 'input',
@@ -110,6 +130,7 @@ function InternPrompt(){
         ])
         .then((response) => {
             // interNAME , interID , interEMAIL ,interSch
+            console.log("I am on Intern prompt ");
             continueYESno()
         })
 }
