@@ -35,9 +35,9 @@ function init(){
         ])
         .then((response) => {
             // manNAME , manID , manEMAIL ,manOFFICENUM
-            const manager = new Manager(
-                response.manName, response.manID, response.manEMAIL, response.manOFFICENUM
-            );
+            const manager = new Manager(response.manNAME, response.manID, response.manEMAIL, response.manOFFICENUM);
+            teamMEMBERS.push(manager);
+            idARRAY.push(response.manID);
             console.log("I am on Manager prompt ");
             continueYESno();
         })
@@ -63,7 +63,11 @@ function continueYESno(){
             else if(response.continue === "Intern"){InternPrompt();}
             // if response.continue === "I  don't want to add any more team members."
             // display results
-            else{console.log("user chose to end the questions ");}
+            else{
+                console.log("Generate team cards....");
+                console.log("this is inside teams members");
+                console.log(teamMEMBERS);
+            }
         })
 
 }
@@ -95,6 +99,9 @@ function EngineerPrompt(){
         ])
         .then((response) => {
             // engNAME , engID , engEMAIL ,engGItHUB
+            const engineer = new Engineer(response.engNAME, response.engID, response.engEMAIL, response.engGItHUB);
+            teamMEMBERS.push(engineer);
+            idARRAY.push(response.engID);
             console.log("I am on engineer prompt ");
             continueYESno();
         })
@@ -128,6 +135,9 @@ function InternPrompt(){
         ])
         .then((response) => {
             // interNAME , interID , interEMAIL ,interSch
+            const intern = new Intern(response.interNAME, response.interID, response.interEMAIL, response.interSch);
+            teamMEMBERS.push(intern);
+            idARRAY.push(response.interID);
             console.log("I am on Intern prompt ");
             continueYESno()
         })
