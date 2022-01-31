@@ -21,7 +21,7 @@ function init(){
             },
         ])
         .then((response) => {if(response.continue === "yes"){
-            EngineerPrompt();
+            continueYESno();
         } else {
             console.log(" answer is no to continue on first prompt");
         }})
@@ -32,7 +32,7 @@ init ();
 // to chose another card to create or end the info collection
 // engineer, inteern and manager prompt  will call this function to check
 // Engineer , Intern , i dont want to add any more team members
-function continueYESno (){
+function continueYESno(){
     inquirer
         .prompt([
             {
@@ -44,10 +44,9 @@ function continueYESno (){
         ])
         .then((response) => {
             if(response.continue === "Engineer"){EngineerPrompt();}
-            if(response.continue === "Intern"){}
+            if(response.continue === "Intern"){InternPrompt();}
             // if response.continue === "I  don't want to add any more team members."
             // display results
-
         })
 
 }
@@ -79,7 +78,39 @@ function EngineerPrompt(){
         ])
         .then((response) => {
             // engNAME , engID , engEMAIL ,engGItHUB
-            
+            continueYESno();
+        })
+}
+
+// Intern prompt will be displayed when user selects to enter Intern info
+// // intern = name, id, email, school,
+function InternPrompt(){
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'interNAME',
+                message: "What is your intern's name?"
+            },
+            {
+                type: 'input',
+                name: 'interID',
+                message: "what is your intern's id?"
+            },
+            {
+                type: 'input',
+                name: 'interEMAIL',
+                message: "what is your intern's email?"
+            },
+            {
+                type: 'input',
+                name: 'interSch',
+                message: "What is your intern's school?"
+            }
+        ])
+        .then((response) => {
+            // interNAME , interID , interEMAIL ,interSch
+            continueYESno()
         })
 }
 /// node index.js
