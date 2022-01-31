@@ -21,30 +21,65 @@ function init(){
             },
         ])
         .then((response) => {if(response.continue === "yes"){
-            secondpromt();
+            EngineerPrompt();
         } else {
             console.log(" answer is no to continue on first prompt");
         }})
 }
 init ();
 
-function secondpromt(){
+// function continueYESno will display the prompt to ask the user 
+// to chose another card to create or end the info collection
+// engineer, inteern and manager prompt  will call this function to check
+// Engineer , Intern , i dont want to add any more team members
+function continueYESno (){
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'continue',
+                message: "Which type of team member would you like to add?",
+                choices: ["Engineer","Intern","I  don't want to add any more team members."]
+            }
+        ])
+        .then((response) => {
+            if(response.continue === "Engineer"){EngineerPrompt();}
+            if(response.continue === "Intern"){}
+            // if response.continue === "I  don't want to add any more team members."
+            // display results
+
+        })
+
+}
+// Engineer prompt will be displayed when user selects to enter engineer info
+// engineer = name, id, email, github
+function EngineerPrompt(){
     inquirer
         .prompt([
             {
                 type: 'input',
-                name: 'secondpromt',
-                message: "this is the secons prompt cab you see?"
+                name: 'engNAME',
+                message: "What is your engineer's name?"
             },
             {
                 type: 'input',
-                name: 'continuescond',
-                message: "want to continue?"
+                name: 'engID',
+                message: "What is your engineer's id?"
+            },
+            {
+                type: 'input',
+                name: 'engEMAIL',
+                message: "What is your engineer's email?"
+            },
+            {
+                type: 'input',
+                name: 'engGItHUB',
+                message: "What is your engineer's GitHub username?"
             }
         ])
         .then((response) => {
-            if (response.continuescond === "yes"){console.log("the answer was yes");}
-            else { console.log("the answer is no, this is the second prompt");}
+            // engNAME , engID , engEMAIL ,engGItHUB
+            
         })
 }
 /// node index.js
