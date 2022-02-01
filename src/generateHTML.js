@@ -11,5 +11,9 @@ function renderIntern(teamMember){}
 
 //create complete HTML page
 function generateHTML(data){
-    return ``;
+    console.log("data in generatehtml ");
+    console.log(data);
+    return `yes i work, i am returning from generate html`;
 }
+
+module.exports = generateHTML;

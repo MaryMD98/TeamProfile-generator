@@ -2,8 +2,10 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
-const path = require('path');
+// const path = require('path');
+const renderHTML = require('./src/generateHTML.js');
 const fs = require('fs');
+
 
 const teamMEMBERS = [];
 const idARRAY = [];
@@ -67,6 +69,9 @@ function continueYESno(){
                 console.log("Generate team cards....");
                 console.log("this is inside teams members");
                 console.log(teamMEMBERS);
+
+                fs.writeFile('./dist/team.html', renderHTML(teamMEMBERS),
+                (error) => error ? console.error(error): console.log("Generating README...."))
             }
         })
 
