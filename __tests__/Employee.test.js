@@ -96,13 +96,29 @@ describe('employeeTEST', () => {
     });
 
     describe("getEmail", () => {
-        expect(true).toEqual(true);
+        // positive
+        it("should return email", () => {
+            const email = "me@test.com";
+            const obj = new employeeTEST("mino", 5, email);
+            const testid = obj.getEmail();
+            expect(testid).toEqual(email);
+        });
+        // exception test
+        it("should throw an error if email is an empty string", () => {
+            const cb = () => new employeeTEST("mino", 5, " ");
+            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @"); 
+            expect(cb).toThrowError(err);
+        });
     });
 
     describe("getRole", () => {
-        expect(true).toEqual(true);
+        // positive
+        it("should return Role", () => {
+            const obj = new employeeTEST("mino", 5, "me@test.com");
+            const testid = obj.getRole();
+            expect(testid).toEqual('Employee');
+        });
     });
-
 });
 
 // intalling jest test
