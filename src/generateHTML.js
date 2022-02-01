@@ -1,5 +1,6 @@
 // create the layout out of the html page
 let cards = "";
+
 // create the Manager card
 // .getName(), .getId(), .getEmail(), .getOfficenum(), 
 function renderManager(teamMember){
@@ -44,9 +45,24 @@ function renderEngineer(teamMember){
 }
 
 // create the Intern card
-// .getRole(), .getName(), .getId(), .getEmail(), .getSchool() 
+// .getName(), .getId(), .getEmail(), .getSchool() 
 function renderIntern(teamMember){
-    return ` this is in intern ${teamMember.getSchool()}`;
+    return ` 
+    <!-- Intern Card -->
+    <div class="card">
+        <div class="intern">
+            <div class="title">
+                <h2 class="titlehead">${teamMember.getName()}</h2>
+                <h3><span>&#127891 &#8205</span> Intern</h3>
+            </div>
+            <div class="content">
+                <p>ID: ${teamMember.getId()}</p>
+                <span>Email:</span><a href="mailto:${teamMember.getEmail()}"> ${teamMember.getEmail()}</a>
+                <p>School: ${teamMember.getSchool()}</p>
+            </div>
+        </div>
+    </div>
+    `;
 }
 
 //create complete HTML page
@@ -64,8 +80,8 @@ function generateHTML(data){
             cards = cards.concat(renderIntern(data[i]));   
         } 
     }
-    console.log(cards);
-    return `
+    
+    return `<!-- Maribel Montes Team Generator -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,24 +101,6 @@ function generateHTML(data){
     <!-- cards will be created here and added in a columns -->
     <div class="row">
     ${cards}
-
-        
-
-        <!-- Intern Card -->
-        <div class="card">
-            <div class="intern">
-                <div class="title">
-                    <h2 class="titlehead">Celina</h2>
-                    <h3><span>&#127891 &#8205</span> Intern</h3>
-                </div>
-                <div class="content">
-                    <p>ID: number</p>
-                    <span>Email:</span><a href="mailto:maribel.montes4@gmail.com"> montes4@gmail.com</a>
-                    <p>School: Utexas</p>
-                </div>
-            </div>
-        </div>
-
     </div>
     </main>
     
