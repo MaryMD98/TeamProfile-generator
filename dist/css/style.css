@@ -22,6 +22,11 @@ header{
     transition: 0.3s;
     box-shadow: 0 8px 10px 0 #00000033;
     margin:5px;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 10px 16px 0 #00000033;
 }
 
 .content {
@@ -38,6 +43,7 @@ header{
     padding: 2px 4px;
     margin:5px;
     color: white;
+    border-radius: 10px;
 }
 
 .engineer .title{
@@ -45,6 +51,7 @@ header{
     padding: 2px 4px;
     margin:5px;
     color: white;
+    border-radius: 10px;
 }
 
 .intern .title{
@@ -52,6 +59,7 @@ header{
     padding: 2px 4px;
     margin:5px;
     color: white;
+    border-radius: 10px;
 }
 
 /* span{
