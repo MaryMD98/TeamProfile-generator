@@ -1,3 +1,51 @@
 body{
-    background-color: aquamarine;
+    background-color: #f4ebf5;
+}
+
+header{
+    text-align: center;
+    background-color: #470450;
+    color:white;
+    padding:20px;
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: #fbfbfb;
+    flex: 0 0 200px;
+    transition: 0.3s;
+    box-shadow: 0 8px 10px 0 #00000033;
+    margin:5px;
+}
+
+.content {
+    padding: 8px 16px;
+    margin: 20px;
+}
+
+.manager .title{
+    background-color: #210146;
+    padding: 2px 4px;
+    margin:5px;
+    color: white;
+}
+
+.engineer .title{
+    background-color: #00351f;
+    padding: 2px 4px;
+    margin:5px;
+    color: white;
+}
+
+.intern .title{
+    background-color: #792c00;
+    padding: 2px 4px;
+    margin:5px;
+    color: white;
 }
