@@ -3,27 +3,44 @@ let cards = "";
 // create the Manager card
 // .getName(), .getId(), .getEmail(), .getOfficenum(), 
 function renderManager(teamMember){
-    return ` <!-- Manager card -->
-<div class="card">
-    <div class="manager">
-        <div class="title">
-            <h2 class="titlehead">${teamMember.getName()}</h2>
-            <h3><span>&#x2615</span> Manager</h3>
-        </div>
-        <div class="content">
-            <p>ID: ${teamMember.getId()}</p>
-            <span>Email:</span><a href="mailto:${teamMember.getEmail()}"> ${teamMember.getEmail()}</a>
-            <p>Office number: ${teamMember.getOfficenum()}</p>
+    return ` 
+    <!-- Manager card -->
+    <div class="card">
+        <div class="manager">
+            <div class="title">
+                <h2 class="titlehead">${teamMember.getName()}</h2>
+                <h3><span>&#x2615</span> Manager</h3>
+            </div>
+            <div class="content">
+                <p>ID: ${teamMember.getId()}</p>
+                <span>Email:</span><a href="mailto:${teamMember.getEmail()}"> ${teamMember.getEmail()}</a>
+                <p>Office number: ${teamMember.getOfficenum()}</p>
+            </div>
         </div>
     </div>
-</div>
     `;
 }
 
 // create the Engineer card
-// .getRole(), .getName(), .getId(), .getEmail(), .getGithub(), 
+// .getName(), .getId(), .getEmail(), .getGithub(), 
 function renderEngineer(teamMember){
-    return ` this is in engineer ${teamMember.getEmail()}`;
+    return ` 
+    <!-- Engineer card -->
+    <div class="card">
+        <div class="engineer">
+            <div class="title">
+                <h2 class="titlehead">${teamMember.getName()}</h2>
+                <h3><span>&#128083</span> Engineer</h3>
+            </div>
+            <div class="content">
+                <p>ID: ${teamMember.getId()}</p>
+                <span>Email:</span><a href="mailto:${teamMember.getEmail()}"> ${teamMember.getEmail()}</a>
+                <br><br>
+                <span>GitHub:<a href="https://github.com/${teamMember.getGithub()}" target="_blank" rel="noopener noreferrer"> ${teamMember.getGithub()}</a></span>
+            </div>
+        </div>
+    </div>
+    `;
 }
 
 // create the Intern card
@@ -69,21 +86,7 @@ function generateHTML(data){
     <div class="row">
     ${cards}
 
-        <!-- Engineer card -->
-        <div class="card">
-            <div class="engineer">
-                <div class="title">
-                    <h2 class="titlehead">Samira</h2>
-                    <h3><span>&#128083</span> Engineer</h3>
-                </div>
-                <div class="content">
-                    <p>ID: number</p>
-                    <span>Email:</span><a href="mailto:maribel.montes4@gmail.com"> montes4@gmail.com</a>
-                    <br><br>
-                    <span>GitHub:<a href="https://github.com/MaryMD98" target="_blank" rel="noopener noreferrer"> MaryMD98</a></span>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Intern Card -->
         <div class="card">
