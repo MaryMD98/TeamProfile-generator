@@ -17,13 +17,13 @@ describe('internTEST', () => {
         });
 
         it("should throw an error if 'school' is not a string", () => {
-            const cb = () => new internTEST(3, 2, "email@text.com", 8);
+            const cb = () => new internTEST("mino", 2, "email@text.com", 8);
             const err = new Error("Expected parameter 'school' to be a non-empty string");
             expect(cb).toThrowError(err);
         });
 
         it("should throw an error if 'school' is an empty string", () => {
-            const cb = () => new internTEST("", 2, "email@text.com", "");
+            const cb = () => new internTEST("mino", 2, "email@text.com", "");
             const err = new Error("Expected parameter 'school' to be a non-empty string");
             expect(cb).toThrowError(err);
         });
