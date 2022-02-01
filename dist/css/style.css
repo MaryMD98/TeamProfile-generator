@@ -25,8 +25,12 @@ header{
 }
 
 .content {
-    padding: 8px 16px;
-    margin: 20px;
+    padding: 8px 10px;
+    margin: 20px 10px;
+}
+
+.titlehead{
+    margin-left: 10px;
 }
 
 .manager .title{
