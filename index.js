@@ -40,7 +40,6 @@ function init(){
             const manager = new Manager(response.manNAME, response.manID, response.manEMAIL, response.manOFFICENUM);
             teamMEMBERS.push(manager);
             idARRAY.push(response.manID);
-            console.log("I am on Manager prompt ");
             continueYESno();
         })
 }
@@ -66,12 +65,11 @@ function continueYESno(){
             // if response.continue === "I  don't want to add any more team members."
             // display results
             else{
-                console.log("Generate team cards....");
                 console.log("this is inside teams members");
                 console.log(teamMEMBERS);
 
                 fs.writeFile('./dist/team.html', renderHTML(teamMEMBERS),
-                (error) => error ? console.error(error): console.log("Generating README...."))
+                (error) => error ? console.error(error): console.log("Generating team cards...."))
             }
         })
 
@@ -107,7 +105,6 @@ function EngineerPrompt(){
             const engineer = new Engineer(response.engNAME, response.engID, response.engEMAIL, response.engGItHUB);
             teamMEMBERS.push(engineer);
             idARRAY.push(response.engID);
-            console.log("I am on engineer prompt ");
             continueYESno();
         })
 }
@@ -143,7 +140,6 @@ function InternPrompt(){
             const intern = new Intern(response.interNAME, response.interID, response.interEMAIL, response.interSch);
             teamMEMBERS.push(intern);
             idARRAY.push(response.interID);
-            console.log("I am on Intern prompt ");
             continueYESno()
         })
 }
