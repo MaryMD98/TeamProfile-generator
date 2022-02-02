@@ -8,37 +8,47 @@ const fs = require('fs');
 const teamMEMBERS = [];
 const idARRAY = [];
 
-// the first prompt will ask the Mnager questions and save the information of manager
+// Initialize the console and call the manager prompt
 function init(){
+    console.log("Welcome to the team generator!");
+    console.log("Please build your team ♦️");
+    ManagerPrompt();
+}
+
+init ();
+
+// the first prompt will ask the Mnager questions and save the information of manager
+function ManagerPrompt(){
     inquirer
         .prompt([
             {
                 type: 'input',
                 name: 'manNAME',
                 message: "What is the team manager's name?",
-                validate: (answer) => { if(answer !== ''){return true;}
-                                        return "Please enter at least one character.";},
+                validate: (answer) => { if(answer !== '' && answer.match(/[a-zA-Z]/i)){return true;}
+                                        return "Please enter at least one letter character.";},
             },
             {
                 type: 'input',
                 name: 'manID',
                 message: "What is the team manager's id?",
-                validate: (answer) => { if(answer.match(/[1-9]/i)){console.log("this is the number " + answer + " this is its type " + typeof answer);return true;}
-                                        return "This ID is already in use, please chose a different one.";},
+                validate: (answer) => { if(answer.match(/[1-9]/i)){
+                                            if(idARRAY.includes(answer)){return "This ID is already in use, please chose a different one.";} 
+                                            else {return true;}} return "Please enter a number greater than zero";},
             },
             {
                 type: 'input',
                 name: 'manEMAIL',
                 message: "What is the team manager's email?",
-                validate: (answer) => { if(answer !== '' && answer.includes("@")){return true;}
+                validate: (answer) => { if(answer !== '' && answer.includes("@") && answer.includes(".")){return true;}
                                         return "Please enter at valid email.";},
             },
             {
                 type: 'input',
                 name: 'manOFFICENUM',
                 message: "What is the team manager's office number?",
-                validate: (answer) => { if(answer.match(/[1-9]/i)){console.log("this is the number " + answer + " this is its type " + typeof answer);return true;}
-                                        return "This ID is already in use, please chose a different one.";},
+                validate: (answer) => { if(answer.match(/[1-9]/i)){return true;} 
+                                        return "Please enter a number greater than zero";},
             }
         ])
         .then((response) => {
@@ -49,8 +59,6 @@ function init(){
             continueYESno();
         })
 }
-init ();
-
 // function continueYESno will display the prompt to ask the user 
 // to chose another card to create or end the info collection
 // engineer, inteern and manager prompt  will call this function to check
@@ -88,22 +96,31 @@ function EngineerPrompt(){
             {
                 type: 'input',
                 name: 'engNAME',
-                message: "What is your engineer's name?"
+                message: "What is your engineer's name?",
+                validate: (answer) => { if(answer !== '' && answer.match(/[a-zA-Z]/i)){return true;}
+                                        return "Please enter at least one letter character.";},
             },
             {
                 type: 'input',
                 name: 'engID',
-                message: "What is your engineer's id?"
+                message: "What is your engineer's id?",
+                validate: (answer) => { if(answer.match(/[1-9]/i)){
+                                            if(idARRAY.includes(answer)){return "This ID is already in use, please chose a different one.";} 
+                                            else {return true;}} return "Please enter a number greater than zero";},
             },
             {
                 type: 'input',
                 name: 'engEMAIL',
-                message: "What is your engineer's email?"
+                message: "What is your engineer's email?",
+                validate: (answer) => { if(answer !== '' && answer.includes("@") && answer.includes(".")){return true;}
+                                        return "Please enter at valid email.";},
             },
             {
                 type: 'input',
                 name: 'engGItHUB',
-                message: "What is your engineer's GitHub username?"
+                message: "What is your engineer's GitHub username?",
+                validate: (answer) => { if(answer !== '' && answer.match(/[a-zA-Z]/i)){return true;}
+                                        return "Please enter at least one letter character.";},
             }
         ])
         .then((response) => {
@@ -123,22 +140,31 @@ function InternPrompt(){
             {
                 type: 'input',
                 name: 'interNAME',
-                message: "What is your intern's name?"
+                message: "What is your intern's name?",
+                validate: (answer) => { if(answer !== '' && answer.match(/[a-zA-Z]/i)){return true;}
+                                        return "Please enter at least one letter character.";},
             },
             {
                 type: 'input',
                 name: 'interID',
-                message: "What is your intern's id?"
+                message: "What is your intern's id?",
+                validate: (answer) => { if(answer.match(/[1-9]/i)){
+                                            if(idARRAY.includes(answer)){return "This ID is already in use, please chose a different one.";} 
+                                            else {return true;}} return "Please enter a number greater than zero";},
             },
             {
                 type: 'input',
                 name: 'interEMAIL',
-                message: "What is your intern's email?"
+                message: "What is your intern's email?",
+                validate: (answer) => { if(answer !== '' && answer.includes("@") && answer.includes(".")){return true;}
+                                        return "Please enter at valid email.";},
             },
             {
                 type: 'input',
                 name: 'interSch',
-                message: "What is your intern's school?"
+                message: "What is your intern's school?",
+                validate: (answer) => { if(answer !== '' && answer.match(/[a-zA-Z]/i)){return true;}
+                                        return "Please enter at least one letter character.";},
             }
         ])
         .then((response) => {

@@ -46,25 +46,25 @@ describe('employeeTEST', () => {
 
         it("should throw an error if 'email' does not contain .", () => {
             const cb = () => new employeeTEST("mino", "2", "mina@");
-            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @");
+            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @ and .");
             expect(cb).toThrowError(err);
         });
 
         it("should throw an error if 'email' does not contain the @", () => {
             const cb = () => new employeeTEST("mino", "2", "emailtext.com");
-            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @");
+            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @ and .");
             expect(cb).toThrowError(err);
         });
 
         it("should throw an error if 'email' does not contain @ or .", () => {
             const cb = () => new employeeTEST("mino", "2", "email");
-            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @");
+            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @ and .");
             expect(cb).toThrowError(err);
         });
 
         it("should throw an error if 'email' is an empty string", () => {
             const cb = () => new employeeTEST("mino", "2", "");
-            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @");
+            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @ and .");
             expect(cb).toThrowError(err);
         });
     });
@@ -112,7 +112,7 @@ describe('employeeTEST', () => {
         // exception test
         it("should throw an error if email is an empty string", () => {
             const cb = () => new employeeTEST("mino", "5", "");
-            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @"); 
+            const err = new Error("Expected parameter 'email' to be a non-empty string and to inlcude @ and ."); 
             expect(cb).toThrowError(err);
         });
     });
