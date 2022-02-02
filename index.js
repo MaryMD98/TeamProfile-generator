@@ -79,8 +79,8 @@ function continueYESno(){
             // if response.continue === "I  don't want to add any more team members."
             // display results
             else{
-                console.log("this is inside teams members");
-                console.log(teamMEMBERS);
+                // console.log("this is inside teams members");
+                // console.log(teamMEMBERS);
 
                 fs.writeFile('./dist/team.html', renderHTML(teamMEMBERS),
                 (error) => error ? console.error(error): console.log("Generating team cards...."))
@@ -175,9 +175,12 @@ function InternPrompt(){
             continueYESno()
         })
 }
-/// node index.js
-// Welcome to the team generator!
-// use `npm run reset` to reset the dist/folder
-
-//Please build your team somesymbolgoeshere
-// dist / style.css / team.html
+///
+//
+///
+// node index.js
+// npm test
+// npm install --save-dev jest
+// npm i inquirer
+// npm init
+// command prompt lines used
