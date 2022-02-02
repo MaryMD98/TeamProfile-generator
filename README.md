@@ -33,13 +33,13 @@ To run tests, run the following command
 
     npm test
 
-## [Usage](#usage)
-
-This application generates and HTML that displays team member profile information.
-
 This application contains tests for every class to ensure each section works accordingly.
 
 ![image contains the pass of test](./screenshot/Screenshot3.png)
+
+## [Usage](#usage)
+
+This application generates and HTML that displays team member profile information.
 
 ## Screenshot of Team Profile generator:
 
