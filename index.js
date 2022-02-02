@@ -2,10 +2,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
-// const path = require('path');
 const renderHTML = require('./src/generateHTML.js');
 const fs = require('fs');
-
 
 const teamMEMBERS = [];
 const idARRAY = [];
@@ -17,22 +15,30 @@ function init(){
             {
                 type: 'input',
                 name: 'manNAME',
-                message: "What is the team manager's name?"
+                message: "What is the team manager's name?",
+                validate: (answer) => { if(answer !== ''){return true;}
+                                        return "Please enter at least one character.";},
             },
             {
                 type: 'input',
                 name: 'manID',
-                message: "What is the team manager's id?"
+                message: "What is the team manager's id?",
+                validate: (answer) => { if(answer.match(/[1-9]/i)){console.log("this is the number " + answer + " this is its type " + typeof answer);return true;}
+                                        return "This ID is already in use, please chose a different one.";},
             },
             {
                 type: 'input',
                 name: 'manEMAIL',
-                message: "What is the team manager's email?"
+                message: "What is the team manager's email?",
+                validate: (answer) => { if(answer !== '' && answer.includes("@")){return true;}
+                                        return "Please enter at valid email.";},
             },
             {
                 type: 'input',
                 name: 'manOFFICENUM',
-                message: "What is the team manager's office number?"
+                message: "What is the team manager's office number?",
+                validate: (answer) => { if(answer.match(/[1-9]/i)){console.log("this is the number " + answer + " this is its type " + typeof answer);return true;}
+                                        return "This ID is already in use, please chose a different one.";},
             }
         ])
         .then((response) => {

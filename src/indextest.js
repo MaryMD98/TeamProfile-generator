@@ -81,3 +81,10 @@
 //     return "please enter a valid name."
 //     }
 // }
+
+// node index.js
+// npm test
+// npm install --save-dev jest
+// npm i inquirer
+// npm init
+// command prompt lines used
