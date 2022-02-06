@@ -11,7 +11,7 @@ When the application starts, the user is prompt to enter the manager information
 
 The HTML contains cards of each team member, each card contains the information gather in the command prompt. When the github username is clicked, then the github profile opens in a new tab. when the email address is clicked, then the default email program opens and populates the To field with the email address.
 
-Here is a screencapture video demostrating the functinality of the [application](https://watch.screencastify.com/v/gWULa8QVKPIP0794AgvH).
+Here is a screencapture video demostrating the functinality of the [application](https://drive.google.com/file/d/1NmFVXjeOv9QQfiM3FMvG5-2YYfw6Z7PU/view).
 
 ## Table of Content
 
